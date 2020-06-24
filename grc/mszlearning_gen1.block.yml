@@ -1,0 +1,34 @@
+id: mszlearning_gen1
+
+label: Generator 1
+
+category: '[Mszlearning]'
+
+templates:
+  imports: import mszlearning
+  make: mszlearning.gen1(${in_i}, ${in_q})
+  callbacks:
+  - set_i(${in_i})
+  - set_q(${in_q})
+
+cpp_templates:
+  callbacks:
+  - set_i(${in_i})
+  - set_q(${in_q})
+
+parameters:
+- id: in_i
+  label: Input I
+  default: '0.3'
+  dtype: float
+- id: in_q
+  label: Input Q
+  default: '0.7'
+  dtype: float
+
+outputs:
+- label: out
+  domain: stream
+  dtype: complex
+
+file_format: 1
